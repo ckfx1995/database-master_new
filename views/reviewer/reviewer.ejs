@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>admin_management</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../static/css/portfolio-item.css" rel="stylesheet">
+    <link href="../static/css/staff_management.css" rel="stylesheet">
+	<!-- Material Design Lite -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
+  <script type="text/javascript" > function Edit(id,id2) {window.location.href = "/reviewer?id=" + id + "&orderby=" + id2;}</script>
+
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="">Game Reviewer Lister</a>
+
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container container2" >
+		<div class="management_item" style="border-width:3px;border-style:dashed;border-color:#FFAC55;padding:5px">
+			   <p class="h1"><%= data1[0].gamename  %> </p>
+         <input type="button" name="edit" value="older by Useful"  onclick="Edit('<%= data1[0].id  %>','agree');" />
+         <input type="button" name="edit" value="older by Hours Played"  onclick="Edit('<%= data1[0].id  %>','playtime');" />
+         <input type="button" name="edit" value="older by Recommended"  onclick="Edit('<%= data1[0].id  %>','recommend');" />
+         <input type="button" name="edit" value="older by Not Recommended"  onclick="Edit('<%= data1[0].id  %>','urecommend');" />
+         <% for ( var i = 0 ; i < data2.length ; i++){ %>
+					<div class="row">
+
+						<div class="col-sm-12 fooddata" >
+							<ul style="border-style:solid;">
+								<li class="h4">Game ID:  <%= data2[i].gameid  %></li>
+								<li class="h4">Useful: <%= data2[i].agree  %></li>
+                <li class="h4">Funny:  <%= data2[i].interesting  %></li>
+								<li class="h4">Username Owned Game: <%= data2[i].playername  %></li>
+                <li class="h4">reviews written:  <%= data2[i].havegames  %></li>
+								<li class="h4">Email: <%= data2[i].reviewsnum  %></li>
+                <li class="h4">Recommended:  <%= data2[i].recommend  %></li>
+								<li class="h4">Hours Played: <%= data2[i].playtime  %></li>
+                <li class="h4">Date:  <%= data2[i].date  %></li>
+								<li class="h4">eview: <%= data2[i].review  %></li>
+							</ul>
+						  </div>
+
+						  <div class="col-sm-2" >
+
+						  </div>
+					</div>
+            <%  }%>
+			</div>
+
+		</div>
+
+
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

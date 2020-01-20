@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <h2><%= name %></h2>
+  <ul>
+    <% items.forEach(function(item) { %>
+        <li><%= item %></li>
+    <% }); %>
+  </ul>
+  /*  -each user in items
+    tr
+        td(style="padding:20px")=user.id
+        td(style="padding:20px")=user.name
+        td(style="padding:20px")=user.description*/
+</body>
+</html>
